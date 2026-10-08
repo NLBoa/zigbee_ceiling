@@ -1,0 +1,30 @@
+# Zigbee2MQTT configuration template (Zigbee2MQTT 2.14+, config format version 5).
+#
+# Copy to ~/zigbee2mqtt/data/configuration.yaml. On first start Zigbee2MQTT replaces each
+# GENERATE with real values. From then on that file holds the network key: keep it out of git.
+version: 5
+
+homeassistant:
+  enabled: false
+
+frontend:
+  enabled: true
+  port: 8080
+
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://localhost:1883        # Raspberry Pi (Docker): mqtt://mosquitto:1883
+
+serial:
+  port: /dev/cu.usbserial-10           # macOS; find it with `ls /dev/cu.*`. Raspberry Pi (Docker): /dev/zigbee
+  adapter: zstack                      # Sonoff ZBDongle-P (TI CC2652P)
+
+advanced:
+  network_key: GENERATE
+  pan_id: GENERATE
+  ext_pan_id: GENERATE
+
+# Filled in by Zigbee2MQTT as switches are paired and renamed, e.g.
+# devices:
+#   '0xffffb40e060aceac':
+#     friendly_name: bedroom_light

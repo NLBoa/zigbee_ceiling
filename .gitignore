@@ -1,0 +1,17 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Zigbee2MQTT runtime data: contains the network key and pairing data, never commit
+data/
+configuration.yaml
+database.db
+coordinator_backup.json
+state.json
+
+# macOS
+.DS_Store
